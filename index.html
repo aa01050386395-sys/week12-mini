@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f1e9">
+  <meta name="theme-color" content="#eee4d0">
   <title>임민주 | About me</title>
   <style>
     :root {
@@ -226,6 +226,232 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
+
+    :root {
+      --paper: #eee4d0;
+      --ink: #342d28;
+      --muted: #76695d;
+      --line: #c9b9a2;
+      --coral: #b94f3d;
+      --green: #b6c48c;
+      --blue: #a9c5c1;
+      --butter: #e8ca78;
+      --rose: #d99786;
+    }
+    body {
+      background-image: radial-gradient(rgba(99, 76, 52, 0.12) 0.7px, transparent 0.7px),
+        linear-gradient(90deg, transparent 49.8%, rgba(147, 115, 77, 0.05) 50%, transparent 50.2%);
+      background-size: 9px 9px, 100% 100%;
+    }
+    .page { position: relative; }
+    .topbar {
+      position: relative;
+      min-height: 84px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 18px;
+      letter-spacing: 0.08em;
+    }
+    .wordmark::before { content: "✿"; margin-right: 9px; color: var(--coral); }
+    .nav { font-size: 12px; }
+    .nav a { padding: 8px 0; border-bottom: 1px dotted transparent; }
+    .nav a:hover, .nav a:focus-visible { border-color: var(--coral); }
+    .hero {
+      position: relative;
+      min-height: 530px;
+      margin-top: 24px;
+      padding: 62px 38px;
+      border: 1px solid var(--line);
+      outline: 1px solid rgba(201, 185, 162, 0.65);
+      outline-offset: 6px;
+      background: rgba(255, 251, 241, 0.63);
+    }
+    .hero::before {
+      position: absolute;
+      top: 16px;
+      left: 18px;
+      content: "✳  MINJU'S LITTLE JOURNAL  ✳";
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+    }
+    .hero::after {
+      position: absolute;
+      right: 24px;
+      bottom: 17px;
+      content: "EST. WITH LOVE";
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+    }
+    .eyebrow, .section-label {
+      color: var(--coral);
+      font-family: var(--serif);
+      letter-spacing: 0.1em;
+    }
+    h1, h2, .interest-card h3, .taste-text { font-family: "Batang", "Nanum Myeongjo", var(--serif); }
+    h1 { font-size: 86px; line-height: 1.08; }
+    h1 .name { position: relative; color: var(--coral); }
+    h1 .name::after {
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      left: 0;
+      height: 8px;
+      background: rgba(232, 202, 120, 0.68);
+      content: "";
+      z-index: -1;
+    }
+    .hero-copy { max-width: 470px; line-height: 1.95; }
+    .hero-copy strong {
+      text-decoration: underline;
+      text-decoration-color: var(--coral);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+    .portrait {
+      width: min(100%, 290px);
+      background: var(--blue);
+      border: 7px solid #fff9eb;
+      border-radius: 47% 47% 3px 3px;
+      box-shadow: 0 0 0 1px var(--ink), 8px 9px 0 rgba(52, 45, 40, 0.13);
+    }
+    .portrait::before { width: 218px; height: 218px; border-style: dashed; }
+    .portrait::after { width: 268px; height: 268px; border-color: rgba(52, 45, 40, 0.17); }
+    .portrait-mark { font-family: "Batang", "Nanum Myeongjo", var(--serif); }
+    .portrait-note {
+      right: -13px;
+      bottom: 32px;
+      padding: 8px 13px;
+      background: var(--butter);
+      border: 1px solid var(--ink);
+      box-shadow: 2px 3px 0 rgba(52, 45, 40, 0.17);
+    }
+    .facts {
+      margin-top: 26px;
+      border: 1px solid var(--ink);
+      background: #d6dfc2;
+      box-shadow: 5px 5px 0 rgba(52, 45, 40, 0.13);
+    }
+    .fact { min-height: 108px; padding: 19px 24px; }
+    .fact + .fact { border-left-color: rgba(52, 45, 40, 0.22); }
+    .fact-label { font-family: var(--serif); letter-spacing: 0.09em; }
+    .fact strong { font-family: "Batang", "Nanum Myeongjo", var(--serif); }
+    .interests { padding: 91px 0 82px; }
+    .section-heading { margin-bottom: 32px; }
+    h2 { font-size: 43px; }
+    .section-intro { padding: 0 0 4px 14px; border-left: 2px solid var(--coral); }
+    .interest-grid { grid-template-columns: repeat(6, 1fr); gap: 15px; }
+    .interest-card {
+      position: relative;
+      grid-column: span 2;
+      min-height: 215px;
+      padding: 20px;
+      border: 1px solid var(--ink);
+      box-shadow: 3px 4px 0 rgba(52, 45, 40, 0.14);
+      overflow: hidden;
+    }
+    .interest-card:nth-child(4) { grid-column: 2 / span 2; }
+    .interest-card:nth-child(1) { background: #c8d1a7; }
+    .interest-card:nth-child(2) { background: #d9a394; }
+    .interest-card:nth-child(3) { background: #e7d28f; }
+    .interest-card:nth-child(4) { background: #b9d0ca; }
+    .interest-card:nth-child(5) { background: #d4c2aa; }
+    .interest-card::after {
+      position: absolute;
+      right: -15px;
+      bottom: -31px;
+      width: 96px;
+      height: 96px;
+      border: 1px solid rgba(52, 45, 40, 0.26);
+      border-radius: 50%;
+      content: "";
+    }
+    .interest-card:nth-child(1)::before { content: "✿"; }
+    .interest-card:nth-child(2)::before { content: "✎"; }
+    .interest-card:nth-child(3)::before { content: "⌘"; }
+    .interest-card:nth-child(4)::before { content: "♡"; }
+    .interest-card:nth-child(5)::before { content: "＋"; }
+    .interest-card::before {
+      position: absolute;
+      right: 16px;
+      bottom: 9px;
+      z-index: 1;
+      color: rgba(52, 45, 40, 0.6);
+      font-family: var(--serif);
+      font-size: 30px;
+      transform: rotate(-12deg);
+    }
+    .card-number { font-size: 11px; letter-spacing: 0.06em; }
+    .interest-card h3 { font-size: 27px; }
+    .interest-card p { max-width: 190px; font-size: 12px; }
+    .taste {
+      position: relative;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 38px;
+      padding: 40px 30px 42px;
+      border: 1px solid var(--ink);
+      background: #f8edda;
+      box-shadow: 5px 5px 0 rgba(52, 45, 40, 0.14);
+    }
+    .taste::after {
+      position: absolute;
+      top: -13px;
+      right: 26px;
+      width: 96px;
+      padding: 4px 0;
+      border: 1px dashed var(--coral);
+      color: var(--coral);
+      content: "SWEET DAYS";
+      font-family: var(--serif);
+      font-size: 9px;
+      text-align: center;
+      letter-spacing: 0.08em;
+      transform: rotate(4deg);
+    }
+    .taste h2 { font-size: 36px; }
+    .taste-text { min-height: 0; margin-bottom: 14px; font-size: 22px; line-height: 1.7; }
+    .food-note {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 15px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .food-note span { margin-right: 4px; color: var(--muted); font-family: var(--serif); font-size: 10px; letter-spacing: 0.08em; }
+    .food-note i { color: var(--coral); font-size: 10px; font-style: normal; }
+    .shuffle { font-size: 12px; }
+    footer { margin-top: 34px; border-top: 1px dashed var(--line); font-family: var(--serif); }
+    @media (max-width: 700px) {
+      .hero { margin-top: 18px; padding: 55px 20px 44px; outline-offset: 4px; }
+      .hero::before { top: 13px; left: 12px; font-size: 8px; }
+      .hero::after { right: 13px; bottom: 12px; }
+      h1 { font-size: 58px; }
+      .portrait { width: 220px; }
+      .facts { margin-top: 22px; }
+      .fact { padding: 14px 17px; }
+      .interest-grid { grid-template-columns: repeat(2, 1fr); gap: 11px; }
+      .interest-card, .interest-card:nth-child(4) { grid-column: auto; min-height: 185px; padding: 16px; }
+      .interest-card:last-child { grid-column: 1 / -1; min-height: 155px; }
+      .interest-card h3 { font-size: 24px; }
+      .taste { gap: 18px; padding: 32px 20px 25px; }
+      .taste::after { right: 17px; }
+    }
+    @media (max-width: 380px) {
+      .page { width: calc(100% - 26px); }
+      .nav { gap: 9px; font-size: 10px; }
+      h1 { font-size: 49px; }
+      .interest-grid { grid-template-columns: 1fr; }
+      .interest-card, .interest-card:nth-child(4), .interest-card:last-child { grid-column: auto; min-height: 145px; }
+      .food-note { gap: 6px; }
+    }
   </style>
 </head>
 <body>
@@ -244,7 +470,7 @@
         <div>
           <p class="eyebrow">A LITTLE ABOUT ME · 2026</p>
           <h1 id="page-title">안녕하세요,<br><span class="name">임민주</span>입니다.</h1>
-          <p class="hero-copy">경영정보학을 공부하며 <strong>인공지능과 마케팅</strong>이 만나는 지점에 관심을 두고 있어요. 새로운 아이디어를 발견하고, 좋아하는 것들로 일상을 채우는 중입니다.</p>
+          <p class="hero-copy">경영정보학을 공부하며 <strong>마케팅, 웹디자인, 웹 기획</strong>처럼 아이디어를 사람들에게 전하는 일에 관심이 많아요. 영업과 회계까지 두루 배우며 나만의 길을 찾아가고 있습니다.</p>
         </div>
         <div class="portrait" aria-label="임민주를 나타내는 이니셜 그래픽">
           <span class="portrait-mark" aria-hidden="true">민</span>
@@ -255,7 +481,7 @@
       <section class="facts" id="about" aria-label="기본 정보">
         <div class="fact"><span class="fact-label">NAME</span><strong>임민주</strong></div>
         <div class="fact"><span class="fact-label">MAJOR</span><strong>경영정보학과</strong></div>
-        <div class="fact"><span class="fact-label">ALWAYS IN MY HEAD</span><strong>AI · Marketing</strong></div>
+        <div class="fact"><span class="fact-label">ALWAYS IN MY HEAD</span><strong>Brand · Web · Business</strong></div>
       </section>
 
       <section class="interests" id="interests" aria-labelledby="interests-title">
@@ -264,20 +490,28 @@
             <p class="section-label">WHAT I AM INTO</p>
             <h2 id="interests-title">요즘 관심 있는 것</h2>
           </div>
-          <p class="section-intro">기술이 사람의 마음과 만나는 순간을 궁금해합니다.</p>
+          <p class="section-intro">기획부터 숫자까지, 좋은 경험을 만드는 여러 일을 배우고 있어요.</p>
         </div>
         <div class="interest-grid">
           <article class="interest-card">
-            <span class="card-number">01 / EXPLORE</span>
-            <div><h3>인공지능</h3><p>새로운 가능성을 만드는 기술</p></div>
+            <span class="card-number">01 / STORYTELLING</span>
+            <div><h3>마케팅</h3><p>브랜드와 사람을 잇는 이야기</p></div>
           </article>
           <article class="interest-card">
-            <span class="card-number">02 / CONNECT</span>
-            <div><h3>마케팅</h3><p>사람과 브랜드를 잇는 이야기</p></div>
+            <span class="card-number">02 / VISUAL</span>
+            <div><h3>웹디자인</h3><p>보기 좋고 쓰기 편한 화면</p></div>
           </article>
           <article class="interest-card">
-            <span class="card-number">03 / ENJOY</span>
-            <div><h3>나만의 취향</h3><p>음악, 영화, 드라마 그리고 양식</p></div>
+            <span class="card-number">03 / PLANNING</span>
+            <div><h3>웹 기획</h3><p>필요한 경험을 차근차근 설계하기</p></div>
+          </article>
+          <article class="interest-card">
+            <span class="card-number">04 / PEOPLE</span>
+            <div><h3>영업</h3><p>마음을 읽고 관계를 만들어가기</p></div>
+          </article>
+          <article class="interest-card">
+            <span class="card-number">05 / NUMBERS</span>
+            <div><h3>회계</h3><p>숫자 속에서 흐름을 발견하기</p></div>
           </article>
         </div>
       </section>
@@ -288,7 +522,8 @@
           <h2 id="taste-title">취향 한 스푼</h2>
         </div>
         <div>
-          <p class="taste-text" id="taste-line" aria-live="polite">K-POP 플레이리스트를 듣고, 영화나 드라마 한 편으로 하루를 마무리해요.</p>
+          <p class="taste-text" id="taste-line" aria-live="polite">K-POP과 팝송을 듣고, 영화나 드라마를 보며 쉬는 시간을 좋아해요.</p>
+          <p class="food-note"><span>MY COMFORT FOOD</span> 한식 <i>✳</i> 양식 <i>✳</i> 일식</p>
           <button class="shuffle" id="shuffle-button" type="button"><span aria-hidden="true">↻</span> 다른 취향 보기</button>
         </div>
       </section>
@@ -303,7 +538,7 @@
   <script>
     const tasteLines = [
       "K-POP 플레이리스트를 듣고, 영화나 드라마 한 편으로 하루를 마무리해요.",
-      "팝송을 들으며 맛있는 양식을 먹는 시간이 저만의 작은 리프레시예요.",
+      "팝송을 들으며 맛있는 한식, 양식, 일식을 즐기는 시간이 저만의 작은 리프레시예요.",
       "새로운 음악을 찾고 재미있는 영화와 드라마를 발견하는 걸 좋아해요."
     ];
     let tasteIndex = 0;
